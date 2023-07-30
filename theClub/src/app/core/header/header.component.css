@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+  }
+
 nav {
     margin: 0 auto;
     background-color:purple;
@@ -33,5 +37,20 @@ li {
 
 }
 
+@media only screen and (max-width: 1250px) {
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
 
+    nav {
+        width:30%;
+        height: 70%;
+        float: left;
+    }
+
+    li {
+        padding:0;
+    }
+  }
 
