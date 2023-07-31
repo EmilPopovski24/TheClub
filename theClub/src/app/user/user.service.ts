@@ -10,12 +10,13 @@ interface User {
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
   user: User | undefined;
     userKey = '[user]'
 
   get isLogged():boolean {
-    return !!this.isLogged
+    return !!this.user
   }
 
   constructor() {

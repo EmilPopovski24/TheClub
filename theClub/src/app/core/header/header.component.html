@@ -17,10 +17,18 @@
 <div class="topnav" id="myTopnav">
     <ul>
         <li class="active" routerLink="/home">Home</li>
-        <li routerLink="/login">Login</li>
-        <li routerLink="/register">Register</li>
-        <li>Logout</li>
-        <li routerLink="/profile">Profile</li>
+        <div>
+        <ul *ngIf="!isLoggedIn">
+            <li routerLink="/login">Login</li>
+            <li routerLink="/register">Register</li>
+        </ul>
+        </div>
+        <div>
+        <ul *ngIf="isLoggedIn">
+            <li (click)="logout()">Logout</li>
+            <li routerLink="/profile">Profile</li>
+        </ul>
+        </div>
         <li>Catalog</li>
         <li>About</li>
         <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
