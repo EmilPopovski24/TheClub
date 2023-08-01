@@ -103,7 +103,7 @@ ul {
 h1 {
     display: inline-block;
     position: relative;
-    margin: auto;
+    margin:0 auto;
     width: 70%;
     color: white;
     text-align: center;
