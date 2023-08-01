@@ -17,24 +17,27 @@
 <div class="topnav" id="myTopnav">
     <ul>
         <li class="active" routerLink="/home">Home</li>
-        <div>
-        <ul *ngIf="!isLoggedIn">
-            <li routerLink="/login">Login</li>
-            <li routerLink="/register">Register</li>
-        </ul>
-        </div>
-        <div>
-        <ul *ngIf="isLoggedIn">
-            <li (click)="logout()">Logout</li>
-            <li routerLink="/profile">Profile</li>
-        </ul>
-        </div>
         <li>Catalog</li>
         <li>About</li>
+    </ul>
         <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
         </a>  -->
-        <h1>BookClub</h1>
-    </ul>
+    <h1>BookClub</h1>
+        <div class="ifAuth">
+            <div>
+                <ul *ngIf="!isLoggedIn">
+                    <li routerLink="/login">Login</li>
+                    <li routerLink="/register">Register</li>
+                </ul>
+            </div>
+            <div>
+                <ul *ngIf="isLoggedIn">
+                    <li (click)="logout()">Logout</li>
+                    <li routerLink="/profile">Profile</li>
+                </ul>
+            </div>
+        </div>
+    
   </div>
 </body>
