@@ -2,7 +2,7 @@
     <h1>Login</h1>
 
 <form class="login" form="NgForm" >
-  <!-- (ngSubmit)="login(form)"" -->
+  <!-- (ngSubmit)="login(form)" -->
   <div class="imgcontainer">
     <img src="assets/profile.jpg" alt="Avatar" class="avatar">
   </div>
@@ -15,14 +15,14 @@
     <input type="password" placeholder="Enter Password" name="psw" required #inputPassword>
         
     <button (click)="login(inputEmail.value, inputPassword.value)">Login</button>
-    <label>
+    <!-- <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    </label> -->
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+    <span class="psw"><a routerLink="/register">You don't have an account?</a></span>
   </div>
 </form>
 </div>
