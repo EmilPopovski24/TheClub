@@ -6,11 +6,11 @@ import { ApiService } from '../api.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor(private apiService:ApiService) {}
+  // constructor(private apiService:ApiService) {}
 
-  ngOnInit(): void {
-    this.apiService.getBooks().subscribe(books => {console.log(books)})
-  }
+  // ngOnInit(): void {
+  //   this.apiService.getBooks().subscribe(books => {console.log(books)})
+  // }
 }
