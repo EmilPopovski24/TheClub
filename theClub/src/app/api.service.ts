@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ApiService {
 
-  constructor( private http: HttpClient) { }
+    constructor( private http: HttpClient) { }
 
-  getBooks() {
-    const { apiUrl } = environment;
-    return this.http.get(`${apiUrl}/.json`);
+    getBooks() {
+        const { apiUrl } = environment;
+        return this.http.get(`${apiUrl}/.json`);
   }
 }
