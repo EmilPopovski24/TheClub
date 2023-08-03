@@ -8,9 +8,4 @@ import { ApiService } from '../api.service';
 })
 export class HomeComponent {
 
-  // constructor(private apiService:ApiService) {}
-
-  // ngOnInit(): void {
-  //   this.apiService.getBooks().subscribe(books => {console.log(books)})
-  // }
 }
