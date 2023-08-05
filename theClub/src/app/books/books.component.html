@@ -6,26 +6,20 @@
     <title>Document</title>
 </head>
 <body>
+    <div *ngFor="let book of booksList" >
     <div class="bookCard">
-        <img src="assets/profile.jpg" alt="Avatar" style="width:100%">
+        <div class="img-container">
+            <img src="{{ book.imageUrl }}" alt="Avatar" >
+        </div>
         <div class="container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
+            <h3><b>{{ book.name }}</b></h3>
+            <h4>Written by: {{ book.author }}</h4>
+            <h5>Published: {{ book.year }}</h5>
+            <div class="description">
+                <p><b>Description:</b> {{book.description}}</p>
+            </div>
         </div>
     </div>
-    <div class="bookCard">
-        <img src="assets/profile.jpg" alt="Avatar" style="width:100%">
-        <div class="container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
-        </div>
-    </div>
-    <div class="bookCard">
-        <img src="assets/profile.jpg" alt="Avatar" style="width:100%">
-        <div class="container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
-        </div>
-    </div>
+</div>
 </body>
 </html>
