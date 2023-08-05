@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div *ngIf="noBooks">
+        <h2>There are no books.</h2>
+    </div>
     <div *ngFor="let book of booksList" >
     <div class="bookCard">
         <div class="img-container">
