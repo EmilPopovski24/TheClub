@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NewBookComponent } from './new-book/new-book.component';
 import { CurrentBookComponent } from './current-book/current-book.component';
+import { BookRoutingModule } from './book-routing-module';
 
 
 
@@ -11,7 +12,8 @@ import { CurrentBookComponent } from './current-book/current-book.component';
     CurrentBookComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BookRoutingModule
   ]
 })
 export class BookModule { }

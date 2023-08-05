@@ -17,7 +17,7 @@
 <div class="topnav" id="myTopnav">
     <ul>
         <li class="active" routerLink="/home">Home</li>
-        <li routerLink="/catalog">Catalog</li>
+        <li routerLink="/catalog">Catalog</li>      
         <li>About</li>
     </ul>
         <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -33,8 +33,9 @@
             </div>
             <div>
                 <ul *ngIf="isLoggedIn">
-                    <li (click)="logout()">Logout</li>
+                    <li routerLink="/add-book">Add Book</li>
                     <li routerLink="/profile">Profile</li>
+                    <li (click)="logout()">Logout</li>
                 </ul>
             </div>
         </div>
