@@ -40,6 +40,7 @@ button {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+  border-radius: 10px;
 }
 
 button:hover {
@@ -61,6 +62,7 @@ button:hover {
 /* Add padding to container elements */
 .container {
   padding: 16px;
+  border-radius: 10px;
 }
 
 /* Clear floats */
