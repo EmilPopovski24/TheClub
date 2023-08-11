@@ -1,11 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '../interfaces/user';
 
-interface User {
-  email: string;
-  firstname: string;
-//   phoneNumber: string;
-//   password: string;
-}
+// interface User {
+//   email: string;
+//   firstname: string;
+// //   phoneNumber: string;
+// //   password: string;
+// }
 
 @Injectable({
   providedIn: 'root'
@@ -19,22 +21,29 @@ export class UserService {
     return !!this.user
   }
 
-  constructor() {
-    try {
-        const lsUser = localStorage.getItem(this.userKey) || "";
-        this.user = JSON.parse(lsUser)
-    } catch(error) {
-        this.user = undefined;
-    }
+  constructor(private http: HttpClient) {}
+  //   try {
+  //       const lsUser = localStorage.getItem(this.userKey) || "";
+  //       this.user = JSON.parse(lsUser)
+  //   } catch(error) {
+  //       this.user = undefined;
+  //   }
+  // }
+
+  login(email:string, password:string) {
+    // this.user = {
+    //     email: "john@abv.bg",
+    //     firstname: "John",
+    // };
+
+    // localStorage.setItem(this.userKey, JSON.stringify(this.user))
+
+    return this.http.post('/login', {email, password})
   }
 
-  login(): void {
-    this.user = {
-        email: "john@abv.bg",
-        firstname: "John",
-    };
-
-    localStorage.setItem(this.userKey, JSON.stringify(this.user))
+  register(email:string, firstName:string, lastName:string, password:string, repeatPassword: string) {
+    
+    return this.http.post('/register', {email, firstName, lastName, passGroup: { password, repeatPassword}})
   }
 
   logout(): void {

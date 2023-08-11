@@ -3,7 +3,7 @@ import { Injectable, Provider } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 
-const {apiUrl} = environment;
+const { apiUrl } = environment;
 
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
@@ -11,15 +11,15 @@ export class AppInterceptor implements HttpInterceptor {
         req: HttpRequest<any>,
         next: HttpHandler )
         : Observable<HttpEvent<any>> {
-            if(req.url.startsWith(`/api`)) {
+            if(req.url.startsWith('')) {
                 req = req.clone({
-                    url: req.url.replace("/api", apiUrl),
+                    url: req.url.replace('', apiUrl),
+                    withCredentials: true, //for cookie setup
                 })
             }
 
             return next.handle(req);
         }
-    
 }
 
 export const appInterceptorProvider: Provider = {

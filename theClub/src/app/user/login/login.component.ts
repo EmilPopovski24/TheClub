@@ -21,7 +21,11 @@ constructor(private userService:UserService, private router:Router) {}
       if(form.invalid) {
         return;
       };
-      this.userService.login();
-      this.router.navigate(["/"])
+
+      const { email, password} = form.value;
+      this.userService.login(email, password).subscribe(() => {
+        this.router.navigate(["/"]);
+      });
+      
     }
 }
