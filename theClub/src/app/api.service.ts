@@ -11,7 +11,7 @@ export class ApiService {
     constructor( private http: HttpClient) { }
 
     getBooks() {
-        const { booksUrl } = environment;
-        return this.http.get<Book[]>(`${booksUrl}/books/.json`);
+        const { apiUrl } = environment;
+        return this.http.get<Book[]>(`/books`);
   }
 }

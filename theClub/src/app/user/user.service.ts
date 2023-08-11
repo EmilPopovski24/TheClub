@@ -21,14 +21,14 @@ export class UserService {
     return !!this.user
   }
 
-  constructor(private http: HttpClient) {}
-  //   try {
-  //       const lsUser = localStorage.getItem(this.userKey) || "";
-  //       this.user = JSON.parse(lsUser)
-  //   } catch(error) {
-  //       this.user = undefined;
-  //   }
-  // }
+  constructor(private http: HttpClient) {
+    try {
+        const lsUser = localStorage.getItem(this.userKey) || "";
+        this.user = JSON.parse(lsUser)
+    } catch(error) {
+        this.user = undefined;
+    }
+  }
 
   login(email:string, password:string) {
     // this.user = {
@@ -38,12 +38,12 @@ export class UserService {
 
     // localStorage.setItem(this.userKey, JSON.stringify(this.user))
 
-    return this.http.post('/login', {email, password})
+    return this.http.post('/api/login', {email, password})
   }
 
   register(email:string, firstName:string, lastName:string, password:string, repeatPassword: string) {
     
-    return this.http.post('/register', {email, firstName, lastName, passGroup: { password, repeatPassword}})
+    return this.http.post('/api/register', {email, firstName, lastName, passGroup: { password, repeatPassword}})
   }
 
   logout(): void {

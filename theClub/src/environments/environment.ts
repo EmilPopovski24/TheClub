@@ -1,5 +1,6 @@
 export const environment = {
-    apiUrl:'https://users-49514-default-rtdb.firebaseio.com/',
+    apiUrl:'http://localhost:3000/api',
+    
     
 };
 
