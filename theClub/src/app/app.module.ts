@@ -10,7 +10,8 @@ import { HomeComponent } from './home/home.component'
 import { UserModule } from './user/user.module';
 import { BookModule } from './book/book.module';
 import { BooksComponent } from './books/books.component';
-import { AppEmailDirective } from './shared/validators/app-email.directive';
+// import { AppEmailDirective } from './shared/validators/app-email.directive';
+import { appInterceptorProvider } from './app.interceptor';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { AppEmailDirective } from './shared/validators/app-email.directive';
     UserModule,
     BookModule
   ],
-  providers: [],
+  providers: [appInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

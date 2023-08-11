@@ -1,22 +1,42 @@
 <div class ="register-page">
-<form action="action_page.php">
+<form class="registerForm"  [formGroup]="form" (ngSubmit)="register()">
     <div class="container">
         <div class="register-header">
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
         </div>
       <hr>
-  
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" id="email" required>
-  
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-  
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-      <hr>
-  
+    
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required formControlName="email">
+    <ng-container>
+        <p class="error" *ngIf="form.get('email')?.touched">Email is required!</p>
+        <p class="error" *ngIf="form.get('email')?.errors?.['minLength']">Email is not valid!</p>
+    </ng-container>
+
+    <label for="firstName"><b>First name</b></label>
+    <input type="text" placeholder="Enter your first name" name="firstName" id="firstName" required formControlName="firstName">
+    <ng-container>
+      <p class="error" *ngIf="form.get('firstName')?.touched">First name is required!</p>
+      <!-- <p class="error" *ngIf="form.get('email')?.errors?.['minLength']">Email is not valid!</p> -->
+    </ng-container>
+
+    <label for="lastName"><b>Last name</b></label>
+    <input type="text" placeholder="Enter your last name" name="lastName" id="lastName" required formControlName="lastName">
+    <ng-container>
+      <p class="error" *ngIf="form.get('lastName')?.touched">Last name is required!</p>
+      <!-- <p class="error" *ngIf="form.get('email')?.errors?.['minLength']">Email is not valid!</p> -->
+  </ng-container>
+    <ng-container formGroupName="passGroup">
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" id="psw" required formControlName="password">
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="repeatPassword" id="psw-repeat" required formControlName="repeatPassword">
+
+        <hr>
+    </ng-container>
+
       <!-- <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
       <button type="submit" class="registerbtn">Register</button>
     </div>
