@@ -13,20 +13,15 @@ export class HeaderComponent {
 constructor(private userService: UserService, private router: Router)  {}
 
 isLoggedIn():boolean{
-    if(this.userService.isLogged) {
-      return true
-    } else {
-      return false;
-    }
-    // return this.userService.isLogged
+    return this.userService.isLogged
+
 };
-
-
 
 logout() {
   const auth = getAuth();
-  signOut(auth).then(() => {
-    !this.isLoggedIn
+  signOut(auth)
+  .then(() => {
+    return !!this.userService.isLogged
   }).catch((error) => {
 // An error happened.
   });
