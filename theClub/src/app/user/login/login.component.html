@@ -1,3 +1,20 @@
+<!-- <div *ngIf="noUsers">
+  <h2>There are no books.</h2>
+</div>
+<div *ngFor="let user of usersList" >
+<div class="bookCard">
+  </div>
+  <div class="container">
+      <h3><b>{{ user.email }}</b></h3>
+      <h4>Written by: {{ user.firstName }}</h4>
+      <h5>Published: {{ user.lastName }}</h5>
+      
+  </div>
+</div> -->
+
+
+
+
 <div class="login-page">
     <h1>Login</h1>
 
@@ -19,13 +36,13 @@
     <input type="password" placeholder="Enter Password" name="password" required #inputPassword="ngModel" ngModel>
 	<ng-container *ngIf="inputPassword.touched">
 		<p class = "error" *ngIf="inputPassword.errors?.['required']">Password is required</p>
-		<!-- <p class = "error" >Password is not valid</p> -->
+		<!-- <p class = "error" >Password is not valid</p> --> 
 	</ng-container>   
 
     <button [disabled]="form.invalid">Login</button>
-    <!-- <label>
+  <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label> -->
+    </label>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
@@ -33,4 +50,4 @@
     <span class="psw"><a routerLink="/register">You don't have an account?</a></span>
   </div>
 </form>
-</div>
+</div> 

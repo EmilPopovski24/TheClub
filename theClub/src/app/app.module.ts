@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component'
 import { UserModule } from './user/user.module';
@@ -12,14 +11,15 @@ import { BookModule } from './book/book.module';
 import { BooksComponent } from './books/books.component';
 // import { AppEmailDirective } from './shared/validators/app-email.directive';
 import { appInterceptorProvider } from './app.interceptor';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
     HomeComponent,
     BooksComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +27,7 @@ import { appInterceptorProvider } from './app.interceptor';
     CoreModule,
     HttpClientModule, 
     UserModule,
-    BookModule
+    BookModule,
   ],
   providers: [appInterceptorProvider],
   bootstrap: [AppComponent]

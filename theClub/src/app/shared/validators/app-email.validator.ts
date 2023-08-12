@@ -3,7 +3,7 @@ import { ValidatorFn } from "@angular/forms";
 export function appEmailValidator(domains: string[]) : ValidatorFn {
 
     const domainStrings = domains.join("|");
-    const regExp = new RegExp(`[^@]{4,}@abv\.(${domainStrings})$`);
+    const regExp = new RegExp(`[^@]{4,}@gmail\.(${domainStrings})$`);
 
     return (control) => {
 

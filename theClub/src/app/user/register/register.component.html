@@ -1,5 +1,5 @@
 <div class ="register-page">
-<form class="registerForm"  [formGroup]="form" (ngSubmit)="register()">
+<form class="registerForm"  #form="ngForm" (ngSubmit)="register(form)">
     <div class="container">
         <div class="register-header">
             <h1>Register</h1>
@@ -8,34 +8,34 @@
       <hr>
     
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email" required formControlName="email">
+        <input type="text" placeholder="Enter Email" name="email" id="email" required #inputPassword="ngModel" ngModel>
     <ng-container>
-        <p class="error" *ngIf="form.get('email')?.touched">Email is required!</p>
-        <p class="error" *ngIf="form.get('email')?.errors?.['minLength']">Email is not valid!</p>
+        <!-- <p class="error" *ngIf="form.get('email')?.touched">Email is required!</p>
+        <p class="error" *ngIf="form.get('email')?.errors?.['minLength']">Email is not valid!</p> -->
     </ng-container>
 
     <label for="firstName"><b>First name</b></label>
-    <input type="text" placeholder="Enter your first name" name="firstName" id="firstName" required formControlName="firstName">
+    <input type="text" placeholder="Enter your first name" name="firstName" id="firstName" required #inputPassword="ngModel" ngModel>
     <ng-container>
-      <p class="error" *ngIf="form.get('firstName')?.touched">First name is required!</p>
+      <!-- <p class="error" *ngIf="form.get('firstName')?.touched">First name is required!</p> -->
       <!-- <p class="error" *ngIf="form.get('email')?.errors?.['minLength']">Email is not valid!</p> -->
     </ng-container>
 
     <label for="lastName"><b>Last name</b></label>
-    <input type="text" placeholder="Enter your last name" name="lastName" id="lastName" required formControlName="lastName">
+    <input type="text" placeholder="Enter your last name" name="lastName" id="lastName" required #inputPassword="ngModel" ngModel>
     <ng-container>
-      <p class="error" *ngIf="form.get('lastName')?.touched">Last name is required!</p>
+      <!-- <p class="error" *ngIf="form.get('lastName')?.touched">Last name is required!</p> -->
       <!-- <p class="error" *ngIf="form.get('email')?.errors?.['minLength']">Email is not valid!</p> -->
   </ng-container>
-    <ng-container formGroupName="passGroup">
+    <!-- <ng-container formGroupName="passGroup"> -->
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" id="psw" required formControlName="password">
+        <input type="password" placeholder="Enter Password" name="password" id="password" required #inputPassword="ngModel" ngModel>
 
         <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="repeatPassword" id="psw-repeat" required formControlName="repeatPassword">
+        <input type="password" placeholder="Repeat Password" name="repeatPassword" id="repeatPassword" required #inputPassword="ngModel" ngModel>
 
         <hr>
-    </ng-container>
+    <!-- </ng-container> -->
     
       <button class="registerbtn">Register</button>
     </div>
