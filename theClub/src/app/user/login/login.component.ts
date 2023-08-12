@@ -18,7 +18,7 @@ export class LoginComponent  {
 
 constructor(private userService:UserService, private router:Router) {}
 
-    login(form: NgForm) :void {
+    login(form: NgForm) {
       
       if(form.invalid) {
         return;
@@ -28,6 +28,9 @@ constructor(private userService:UserService, private router:Router) {}
       this.userService.login(email, password).subscribe(() => {
         this.router.navigate(["/"]);
       });
+
+      // this.userService.login();
+      // this.router.navigate(["/"])
       
     }
 }
