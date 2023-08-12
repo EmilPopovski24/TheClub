@@ -5,6 +5,8 @@ import { NgForm } from '@angular/forms';
 import { EMAIL_DOMAINS } from "src/app/shared/constants"
 import { ApiService } from 'src/app/api.service';
 import { User } from 'src/app/interfaces/user';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+
 
 @Component({
   selector: 'app-login',
@@ -23,11 +25,24 @@ constructor(private userService:UserService, private router:Router) {}
       if(form.invalid) {
         return;
       };
-
       const { email, password} = form.value;
-      this.userService.login(email, password).subscribe(() => {
-        this.router.navigate(["/"]);
-      });
+      const auth = getAuth();
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    this.router.navigate(["/"])
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
+      //const { email, password} = form.value;
+      // this.userService.login(email, password).subscribe(() => {
+      //   this.router.navigate(["/"]);
+      // });
 
       // this.userService.login();
       // this.router.navigate(["/"])

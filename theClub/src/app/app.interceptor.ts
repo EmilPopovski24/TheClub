@@ -8,19 +8,19 @@ const { apiUrl } = environment;
 
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
+    
     intercept (
-        req: HttpRequest<any>,
-        next: HttpHandler )
-        : Observable<HttpEvent<any>> {
-            if(req.url.startsWith('/api')) {
-                req = req.clone({
-                    url: req.url.replace('/api', apiUrl),
+        request: HttpRequest<any>,
+        next: HttpHandler ):
+         Observable<HttpEvent<any>> {
+            if(request.url.startsWith('/api')) {
+                request = request.clone({
+                    url: request.url.replace('/api', apiUrl), 
+                    
                     withCredentials: true, //for cookie setup
-                })
-            }
-
-            return next.handle(req);
-        }
+         })};
+         return next.handle(request);
+    }          
 }
 
 export const appInterceptorProvider: Provider = {

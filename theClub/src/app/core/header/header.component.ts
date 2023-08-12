@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { getAuth, signOut } from 'firebase/auth';
 import { UserService } from 'src/app/user/user.service';
+
 
 @Component({
   selector: 'app-header',
@@ -10,12 +12,23 @@ import { UserService } from 'src/app/user/user.service';
 export class HeaderComponent {
 constructor(private userService: UserService, private router: Router)  {}
 
-get isLoggedIn():boolean{
-    return this.userService.isLogged
+isLoggedIn():boolean{
+    if(this.userService.isLogged) {
+      return true
+    } else {
+      return false;
+    }
+    // return this.userService.isLogged
 };
 
-logout():void {
-    this.userService.logout();
-    this.router.navigate(['/'])
+
+
+logout() {
+  const auth = getAuth();
+  signOut(auth).then(() => {
+    !this.isLoggedIn
+  }).catch((error) => {
+// An error happened.
+  });
 }
 }
