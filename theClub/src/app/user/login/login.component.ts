@@ -23,6 +23,7 @@ constructor(private userService:UserService, private router:Router) {}
     login(form: NgForm) {
       
       if(form.invalid) {
+
         return;
       };
       const { email, password} = form.value;
@@ -30,7 +31,7 @@ constructor(private userService:UserService, private router:Router) {}
 signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
-    console.log("signed in")
+    
     const user = userCredential.user;
     this.router.navigate(["/"])
     
