@@ -34,17 +34,17 @@ export class RegisterComponent {
     constructor(private userService:UserService, private router:Router) {}
 
     register(form: NgForm) {
-        
+       
       if(form.invalid) {
         return;
       };
       const { email, firstName, lastName, password, repeatPassword } = form.value
       const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-    // Signed in 
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        
     const user = userCredential.user;
-    // ...
+        this.router.navigate(["/login"])
   })
   .catch((error) => {
     const errorCode = error.code;

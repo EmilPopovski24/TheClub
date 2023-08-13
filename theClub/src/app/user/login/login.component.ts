@@ -30,9 +30,10 @@ constructor(private userService:UserService, private router:Router) {}
 signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
+    console.log("signed in")
     const user = userCredential.user;
     this.router.navigate(["/"])
-    // ...
+    
   })
   .catch((error) => {
     const errorCode = error.code;

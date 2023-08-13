@@ -19,7 +19,7 @@ export class UserService {
 
 
   get isLogged():boolean {
-    if(this.user) {
+    if(this.user === undefined) {
       return true
     } else {
       return false

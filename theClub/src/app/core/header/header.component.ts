@@ -12,16 +12,16 @@ import { UserService } from 'src/app/user/user.service';
 export class HeaderComponent {
 constructor(private userService: UserService, private router: Router)  {}
 
-isLoggedIn():boolean{
-    return this.userService.isLogged
-
-};
+isLoggedIn = true;
+// isLoggedIn():boolean{
+//     return this.userService.isLogged 
+// };
 
 logout() {
   const auth = getAuth();
   signOut(auth)
   .then(() => {
-    return !!this.userService.isLogged
+    this.isLoggedIn = false
   }).catch((error) => {
 // An error happened.
   });
