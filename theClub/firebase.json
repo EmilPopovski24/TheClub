@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "theClub",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

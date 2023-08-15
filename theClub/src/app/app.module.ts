@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
@@ -11,8 +10,11 @@ import { BookModule } from './book/book.module';
 import { BooksComponent } from './books/books.component';
 import { appInterceptorProvider } from './app.interceptor';
 import { AboutComponent } from './about/about.component';
-import { FirebaseApp, initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { FirebaseApp, } from 'firebase/app';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
@@ -40,6 +42,7 @@ const app = initializeApp(firebaseConfig);
     HomeComponent,
     BooksComponent,
     AboutComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,9 @@ const app = initializeApp(firebaseConfig);
     HttpClientModule, 
     UserModule,
     BookModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
     
   ],
   providers: [appInterceptorProvider],

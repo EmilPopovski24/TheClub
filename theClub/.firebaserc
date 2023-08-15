@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "theclub-db": {
+      "hosting": {
+        "theClub": [
+          "theclub-db"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "theclub-db"
+  }
+}
