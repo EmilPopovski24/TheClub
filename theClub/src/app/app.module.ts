@@ -8,7 +8,9 @@ import { HomeComponent } from './home/home.component'
 import { UserModule } from './user/user.module';
 import { BookModule } from './book/book.module';
 import { BooksComponent } from './books/books.component';
-import { appInterceptorProvider } from './app.interceptor';
+import { AngularFireModule } from "@angular/fire/compat";;
+
+// import { appInterceptorProvider } from './app.interceptor';
 import { AboutComponent } from './about/about.component';
 import { FirebaseApp, } from 'firebase/app';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -28,7 +30,7 @@ const firebaseConfig = {
   measurementId: "G-89R9WRKSSZ"
 };
 
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 // const db = getFirestore(app);
 // const auth = getAuth(app);
 
@@ -51,12 +53,13 @@ const app = initializeApp(firebaseConfig);
     HttpClientModule, 
     UserModule,
     BookModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     
   ],
-  providers: [appInterceptorProvider],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
