@@ -1,18 +1,11 @@
 <div class ="register-page">
-<form class="registerForm"  #form="ngForm" (ngSubmit)="register(form.value)">
+<form class="registerForm"  #form="ngForm" (ngSubmit)="register(form)">
     <div class="container">
         <div class="register-header">
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
         </div>
-      <hr>
-      <label for="email"><b>Username</b></label>
-        <input type="text" placeholder="Enter Email" name="username" id="username" required #inputUsername="ngModel" ngModel>
-    <ng-container>
-        <!-- <p class="error" *ngIf="form.get('email')?.touched">Email is required!</p>
-        <p class="error" *ngIf="form.get('email')?.errors?.['minLength']">Email is not valid!</p> -->
-    </ng-container>
-    
+      <hr>  
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" id="email" required #inputEmail="ngModel" ngModel>
     <ng-container>

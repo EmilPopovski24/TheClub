@@ -8,7 +8,8 @@ import { HomeComponent } from './home/home.component'
 import { UserModule } from './user/user.module';
 import { BookModule } from './book/book.module';
 import { BooksComponent } from './books/books.component';
-import { AngularFireModule } from "@angular/fire/compat";;
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 
 // import { appInterceptorProvider } from './app.interceptor';
 import { AboutComponent } from './about/about.component';
@@ -19,22 +20,21 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 
 // TODO: Replace the following with your app's Firebase project configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAkuzVvukLcBO6iCmo79r22LROzcgSf5i4",
-  authDomain: "books-9e87c.firebaseapp.com",
-  databaseURL: "https://books-9e87c-default-rtdb.firebaseio.com",
-  projectId: "books-9e87c",
-  storageBucket: "books-9e87c.appspot.com",
-  messagingSenderId: "1035705800937",
-  appId: "1:1035705800937:web:85727a717d2d89b388b878",
-  measurementId: "G-89R9WRKSSZ"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAkuzVvukLcBO6iCmo79r22LROzcgSf5i4",
+//   authDomain: "books-9e87c.firebaseapp.com",
+//   databaseURL: "https://books-9e87c-default-rtdb.firebaseio.com",
+//   projectId: "books-9e87c",
+//   storageBucket: "books-9e87c.appspot.com",
+//   messagingSenderId: "1035705800937",
+//   appId: "1:1035705800937:web:85727a717d2d89b388b878",
+//   measurementId: "G-89R9WRKSSZ"
+// };
 
 // const app = initializeApp(firebaseConfig);
 // const db = getFirestore(app);
 // const auth = getAuth(app);
-
-
+AngularFireModule.initializeApp(environment.firebase)
 
 
 
@@ -53,10 +53,13 @@ const firebaseConfig = {
     HttpClientModule, 
     UserModule,
     BookModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideDatabase(() => getDatabase()),
+    AngularFireModule,
+    // AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
+    // AngularFireModule.initializeApp(firebaseConfig),
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideAuth(() => getAuth()),
+    // provideDatabase(() => getDatabase()),
     
   ],
   providers: [],

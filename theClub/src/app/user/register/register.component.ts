@@ -10,6 +10,10 @@ import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { Database, set, ref, update} from "@angular/fire/database";
 
 
+
+
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -32,18 +36,31 @@ export class RegisterComponent {
     // constructor(private fb:FormBuilder, private userService:UserService, private router: Router) {}
 
 
-    constructor(public database: Database, private router:Router) {}
+    constructor() {}
 
-    register(value:any) {
-      set(ref(this.database, 'users/' + value.username), {
-        username: value.username,
-        email: value.email,
-        firstName: value.firstName,
-        lastName: value.lastName,
-        password: value.password,
-        repeatPassword: value.repeatPassword
+    register(form: NgForm) {
+      const { email, firstName, lastName, password, repeatPassword } = form.value
+      const auth = getAuth();
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+      // set(ref(this.database, 'users/' + value.username), {
+      //   username: value.username,
+      //   email: value.email,
+      //   firstName: value.firstName,
+      //   lastName: value.lastName,
+      //   password: value.password,
+      //   repeatPassword: value.repeatPassword
 
-      });
+      // });
 
       alert("user created")
     
