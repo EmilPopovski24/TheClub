@@ -13,7 +13,9 @@ export class BooksComponent implements OnInit{
 	constructor(private apiService:ApiService) {}
 
 	ngOnInit(): void {
+
 		this.apiService.getBooks().subscribe({next:(books) => {this.booksList = books;
+			console.log(books)
 			if(this.booksList.length === 0) {
 				this.noBooks = true;
 			}	

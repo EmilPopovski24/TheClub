@@ -13,11 +13,7 @@ export class ApiService {
 
     getBooks() {
         const { apiUrl } = environment;
-        return this.http.get<Book[]>(`${apiUrl}/books/.json`);
+        return this.http.get<Book[]>(`${apiUrl}/books`);
   }
 
-  getUsers() {
-    const { apiUrl } = environment;
-    return this.http.get<User[]>(`${apiUrl}/users/.json`);
   }
-}
