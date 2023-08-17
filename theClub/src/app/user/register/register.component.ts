@@ -39,9 +39,11 @@ export class RegisterComponent {
     constructor() {}
 
     register(form: NgForm) {
-      const { email, firstName, lastName, password, repeatPassword } = form.value
+      const { email, firstName , lastName, password, repeatPassword } = form.value
       const auth = getAuth();
+      
 createUserWithEmailAndPassword(auth, email, password)
+
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;

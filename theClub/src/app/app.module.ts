@@ -14,7 +14,7 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 // import { appInterceptorProvider } from './app.interceptor';
 import { AboutComponent } from './about/about.component';
 import { FirebaseApp, } from 'firebase/app';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
@@ -31,10 +31,10 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 //   measurementId: "G-89R9WRKSSZ"
 // };
 
-// const app = initializeApp(firebaseConfig);
+// const app = initializeApp(environment.firebase);
 // const db = getFirestore(app);
 // const auth = getAuth(app);
-AngularFireModule.initializeApp(environment.firebase)
+// AngularFireModule.initializeApp(environment.firebase)
 
 
 
@@ -54,12 +54,12 @@ AngularFireModule.initializeApp(environment.firebase)
     UserModule,
     BookModule,
     AngularFireModule,
-    // AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
-    // AngularFireModule.initializeApp(firebaseConfig),
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideAuth(() => getAuth()),
-    // provideDatabase(() => getDatabase()),
+    // AngularFireModule,
+    // AngularFireAuthModule
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
     
   ],
   providers: [],
