@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { getAuth, signOut } from 'firebase/auth';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { UserService } from 'src/app/user/user.service';
 
 
@@ -9,21 +9,19 @@ import { UserService } from 'src/app/user/user.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
+// LoginStatus$ = new BehaviorSubject<boolean>(null);
+// Email$ : Observable<string>;
+
 constructor(private userService: UserService, private router: Router)  {}
-
-isLoggedIn = true;
-// isLoggedIn():boolean{
-//     return this.userService.isLogged 
-// };
-
-logout() {
-  const auth = getAuth();
-  signOut(auth)
-  .then(() => {
-    this.isLoggedIn = false
-  }).catch((error) => {
-// An error happened.
-  });
+isLoggedIn = false;
+ngOnInit():void {
+  localStorage.getItem('user')
+  if('user') {
+    this.isLoggedIn = true;
+  } else {
+    this.isLoggedIn = false;
+  }
 }
+
 }

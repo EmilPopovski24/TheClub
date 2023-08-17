@@ -11,9 +11,18 @@ export class ApiService {
 
     constructor( private http: HttpClient) { }
 
-//     getBooks() {
-//         const { apiUrl } = environment;
-//         return this.http.get<Book[]>(`${apiUrl}/books`);
-//   }
+    getBooks() {
+        const booksUrl = environment.booksUrl;
+        console.log(booksUrl)
+
+        return this.http.get<Book[]>(`${booksUrl}/.json`);
+  }
 
   }
+
+//   {
+//     "rules": {
+//       ".read": "now < 1694638800000",  // 2023-9-14
+//       ".write": "now < 1694638800000",  // 2023-9-14
+//     }
+//   }

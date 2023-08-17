@@ -8,7 +8,7 @@ export const environment = {
     apiKey: 'AIzaSyCeKP2SmgGAk_7aY3Iisjm5LDJ1GlvOJZs',
     authDomain: 'theclub-db.firebaseapp.com',
     messagingSenderId: '22141649058',
-  }
+  },booksUrl:'https://theclub-db-default-rtdb.firebaseio.com/books'
     
     
 };

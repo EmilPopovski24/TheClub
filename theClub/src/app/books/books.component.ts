@@ -7,19 +7,19 @@ import { Book } from '../interfaces/book';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
-export class BooksComponent {
-	// noBooks: boolean = false;
-	// booksList: Book[] = [];
-	// constructor(private apiService:ApiService) {}
+export class BooksComponent implements OnInit{
+	noBooks: boolean = false;
+	booksList: Book[] = [];
+	constructor(private apiService:ApiService) {}
 
-	// ngOnInit(): void {
-
-	// 	this.apiService.getBooks().subscribe({next:(books) => {this.booksList = books;
-	// 		console.log(books)
-	// 		if(this.booksList.length === 0) {
-	// 			this.noBooks = true;
-	// 		}	
-	// 	}
-	// });
-	// }
+	ngOnInit(): void {
+		console.log("init")
+		this.apiService.getBooks().subscribe({next:(books) => {this.booksList = books;
+			console.log(books)
+			if(this.booksList.length === 0) {
+				this.noBooks = true;
+			}	
+		}
+	});
+	}
 }

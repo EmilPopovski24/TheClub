@@ -12,6 +12,9 @@ import { AboutComponent } from './about/about.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule} from "@angular/fire/compat/auth"
 import { environment } from 'src/environments/environment';
+import * as firebase from "firebase/compat";
+import { AuthActivate } from './core/guards/auth.activate';
+
 
 
 
@@ -35,7 +38,7 @@ import { environment } from 'src/environments/environment';
     AngularFireAuthModule,
     
   ],
-  providers: [],
+  providers: [AuthActivate ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
