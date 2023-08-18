@@ -33,13 +33,13 @@ export class UserService {
 		
 	// }
 	
-	register (email:string, username:string, firstName: string, lastName: string, password:string, repeatPassword:string) {
-		return this.http.post('/api/register', {email,username, firstName, lastName, password, repeatPassword})
+	register(email:string, username:string, firstName: string, lastName: string, password:string, repeatPassword:string) {
+		return this.http.post('/api/register', {email, username, firstName, lastName, password, repeatPassword})
 		// return  this..createUserWithEmailAndPassword( user.email, user.password)
 		
 	}
 
-	login  (username:string, password:string) {
+	login(username:string, password:string) {
 		
 		return this.http.post('/api/login', {username, password})
 		 

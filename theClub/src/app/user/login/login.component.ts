@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { EMAIL_DOMAINS } from "src/app/shared/constants"
+// import { EMAIL_DOMAINS } from "src/app/shared/constants"
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { user } from '@angular/fire/auth';
@@ -13,15 +13,14 @@ import { user } from '@angular/fire/auth';
 
 })
 
-export class LoginComponent implements OnInit{
+export class LoginComponent{
   // emailDomains = EMAIL_DOMAINS;
   
 
 constructor(private userService:UserService, private router:Router) {
 }
 
-  ngOnInit() : void { 
-  }
+ 
 
       login(form:NgForm) {
         const { username, password } = form.value       
