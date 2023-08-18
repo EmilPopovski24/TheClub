@@ -15,14 +15,12 @@
         <div class="ifAuth">
             <div>
                 <ul *ngIf="!isLoggedIn">
-                    <
                     <li routerLink="/login">Login</li>
                     <li routerLink="/register">Register</li>
                 </ul>
             </div>
             <div>
                 <ul *ngIf="isLoggedIn">
-                    <li>{{firstName}}</li>
                     <li routerLink="/add-book">Add Book</li>
                     <li routerLink="/profile">Profile</li>
                     <li (click)="logout()">Logout</li>
