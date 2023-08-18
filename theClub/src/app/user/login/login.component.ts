@@ -29,6 +29,7 @@ constructor(private userService:UserService, private router:Router) {
           localStorage.setItem('user', 'value')
           this.router.navigateByUrl('home')
           console.log("Logged In")
+          
           // this.userService.isLogged = true;
           // console.log(form.value)
         }).catch((error:any) => {

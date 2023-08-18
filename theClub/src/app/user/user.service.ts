@@ -4,9 +4,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { Router } from '@angular/router';
 import { getAuth, signOut } from "firebase/auth";
-
-
-
+import { User } from '../interfaces/user';
 
 
 @Injectable({
@@ -14,32 +12,46 @@ import { getAuth, signOut } from "firebase/auth";
 })
 
 export class UserService {
+
+	user: User|undefined;
 	get isLogged():boolean {
-		return null
+		// return true
+		return !!this.user
 	}
 
-	constructor(private afs: AngularFireAuth, private router:Router) {}
+	USER_KEY = '[user]';
+
+	constructor(private afs: AngularFireAuth, private router:Router) {
+		try {
+			const lsUser = localStorage.getItem(this.USER_KEY) || "";
+			this.user = JSON.parse(lsUser)
+		} catch (error) {
+			this.user = undefined;
+		}
+	}
 	
 	registerWithEmailAndPassword (user: {email:string, password:string}) {
+		
 		return this.afs.createUserWithEmailAndPassword(user.email, user.password)
 	}
 
 	signWithEmailAndPassword (user: {email:string, password:string}) {
+		
 		return this.afs.signInWithEmailAndPassword(user.email, user.password)
 	}
 
-	logout() {
+	logout():void {
 		const auth = getAuth();
 		signOut(auth).then(() => {
   		// Sign-out successful.
-		localStorage.removeItem('user');
+		this.user = undefined;
+		localStorage.removeItem(this.USER_KEY);
   		this.router.navigateByUrl("login")
 		console.log("loggedout")
 		
 		}).catch((error) => {
   		// An error happened.
 	});
-
-	
-	}
 }
+}
+

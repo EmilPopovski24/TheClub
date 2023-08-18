@@ -13,8 +13,6 @@ export class ApiService {
 
     getBooks() {
         const booksUrl = environment.booksUrl;
-        console.log(booksUrl)
-
         return this.http.get<Book[]>(`${booksUrl}/.json`);
   }
 
