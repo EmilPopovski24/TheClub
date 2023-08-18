@@ -10,16 +10,5 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
 
-  constructor(private router:Router) {}
-  logout() {
-		const auth = getAuth();
-		signOut(auth).then(() => {
-  		// Sign-out successful.
-		localStorage.removeItem('user');
-  		this.router.navigateByUrl("login")
-		console.log("loggedout")
-		}).catch((error) => {
-  		// An error happened.
-	});
-	}
+  
 }

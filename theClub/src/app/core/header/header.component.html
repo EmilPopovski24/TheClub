@@ -1,16 +1,4 @@
-<!-- <body>
-<nav>
-    <ul>
-        <li>Home</li>
-        <li routerLink="/login">Login </li>
-        <li routerLink="/register">Register</li>
-        <li>Logout</li>
-        <li>Catalog</li>
-        <li>About</li>
-    </ul>
-    <h1>BookClub</h1>
-</nav>
-</body> -->
+
 <body>
     
 
@@ -27,12 +15,14 @@
         <div class="ifAuth">
             <div>
                 <ul *ngIf="!isLoggedIn">
+                    <
                     <li routerLink="/login">Login</li>
                     <li routerLink="/register">Register</li>
                 </ul>
             </div>
             <div>
                 <ul *ngIf="isLoggedIn">
+                    <li>{{firstName}}</li>
                     <li routerLink="/add-book">Add Book</li>
                     <li routerLink="/profile">Profile</li>
                     <li (click)="logout()">Logout</li>

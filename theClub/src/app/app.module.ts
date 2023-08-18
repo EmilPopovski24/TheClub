@@ -15,6 +15,7 @@ import { environment } from 'src/environments/environment';
 import * as firebase from "firebase/compat";
 import { AuthActivate } from './core/guards/auth.activate';
 import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 
 
@@ -26,6 +27,7 @@ import { appInterceptorProvider } from './app.interceptor';
     HomeComponent,
     BooksComponent,
     AboutComponent,
+    AuthenticateComponent,
   
   ],
   imports: [
