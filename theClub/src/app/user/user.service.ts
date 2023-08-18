@@ -5,6 +5,7 @@ import 'firebase/compat/firestore';
 import { Router } from '@angular/router';
 import { getAuth, signOut } from "firebase/auth";
 import { User } from '../interfaces/user';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -16,12 +17,11 @@ export class UserService {
 	user: User|undefined;
 	get isLogged():boolean {
 		// return true
-		return !!this.user
+		return !this.user
 	}
 
 	USER_KEY = '[user]';
-
-	constructor(private afs: AngularFireAuth, private router:Router) {
+	constructor(private router:Router, private http:HttpClient) {
 		try {
 			const lsUser = localStorage.getItem(this.USER_KEY) || "";
 			this.user = JSON.parse(lsUser)
@@ -29,29 +29,26 @@ export class UserService {
 			this.user = undefined;
 		}
 	}
+	// constructor(private afs: AngularFireAuth, private router:Router, private http:HttpClient) {
+		
+	// }
 	
-	registerWithEmailAndPassword (user: {email:string, password:string}) {
+	register (email:string, username:string, firstName: string, lastName: string, password:string, repeatPassword:string) {
+		return this.http.post('/api/register', {email,username, firstName, lastName, password, repeatPassword})
+		// return  this..createUserWithEmailAndPassword( user.email, user.password)
 		
-		return this.afs.createUserWithEmailAndPassword(user.email, user.password)
 	}
 
-	signWithEmailAndPassword (user: {email:string, password:string}) {
+	login  (username:string, password:string) {
 		
-		return this.afs.signInWithEmailAndPassword(user.email, user.password)
+		return this.http.post('/api/login', {username, password})
+		 
 	}
 
-	logout():void {
-		const auth = getAuth();
-		signOut(auth).then(() => {
-  		// Sign-out successful.
-		this.user = undefined;
-		localStorage.removeItem(this.USER_KEY);
-  		this.router.navigateByUrl("login")
-		console.log("loggedout")
-		
-		}).catch((error) => {
-  		// An error happened.
-	});
-}
+	
+logout() {
+	localStorage.removeItem(this.USER_KEY);
+	this.user = undefined;
+	}
 }
 

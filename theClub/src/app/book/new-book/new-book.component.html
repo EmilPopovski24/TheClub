@@ -1,46 +1,33 @@
-<p>new-book works!</p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
-    <div class="form-style-5">
-        <form>
-        <fieldset>
-        <legend><span class="number"></span>Book </legend>
-        <input type="bookName" name="field1" placeholder="Book name...">
-        <input type="email" name="field2" placeholder="Your Email *">
-        <textarea name="field3" placeholder="About yourself"></textarea>
-        <label for="job">Interests:</label>
-        <select id="job" name="field4">
-        <optgroup label="Indoors">
-          <option value="fishkeeping">Fishkeeping</option>
-          <option value="reading">Reading</option>
-          <option value="boxing">Boxing</option>
-          <option value="debate">Debate</option>
-          <option value="gaming">Gaming</option>
-          <option value="snooker">Snooker</option>
-          <option value="other_indoor">Other</option>
-        </optgroup>
-        <optgroup label="Outdoors">
-          <option value="football">Football</option>
-          <option value="swimming">Swimming</option>
-          <option value="fishing">Fishing</option>
-          <option value="climbing">Climbing</option>
-          <option value="cycling">Cycling</option>
-          <option value="other_outdoor">Other</option>
-        </optgroup>
-        </select>      
-        </fieldset>
-        <fieldset>
-        <legend><span class="number">2</span> Additional Info</legend>
-        <textarea name="field3" placeholder="About Your School"></textarea>
-        </fieldset>
-        <input type="submit" value="Apply" />
-        </form>
-        </div>
-</body>
+<div class="login-page">
+  <h1>Add a New Book</h1>
+
+<form class="login" >
+  <!-- #form="ngForm" (ngSubmit)="addBook(form)" -->
+
+
+<div class="container">
+  <label for="bookName"><b>Book Title</b></label>
+  <input type="text"  name="bookName" required  ngModel >
+   
+  <label for="author"><b>Author</b></label>
+  <input type="text"  name="bookAuthor" required  ngModel >
+  
+  <label for="genre"><b>Genre</b></label>
+  <input type="text"  name="bookGenre" required  ngModel >
+
+  <label for="year"><b>Year</b></label>
+  <input type="text"  name="bookYear" required  ngModel >
+
+  <label for="imageUrl"><b>Image Url</b></label>
+  <input type="text"  name="bookImageUrl" required  ngModel >
+  
+  <label for="description"><b>Description</b></label>
+  <textarea name="bookDescription" required  ngModel></textarea>
+  
+
+  <button>Add</button>
+
+</div>
+</form>
+</div>

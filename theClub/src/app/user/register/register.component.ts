@@ -16,15 +16,21 @@ export class RegisterComponent {
   }
 
   register(form:NgForm) {  
-      
-    this.userService.registerWithEmailAndPassword(form.value)
-    .then((res:any) => {
-      this.router.navigateByUrl('login')
-      console.log("Registered")
-      // console.log(form.value)
-    }).catch((error:any) => {
-      console.log(error)
+      const { email, username, firstName, lastName, password, repeatPassword} = form.value;
+    this.userService.register(email!, username!, firstName!, lastName!, password!, repeatPassword!).subscribe(()=>{
+      this.router.navigate(['/login'])
     })
+
+    // .then((res:any) => {
+    //     this.router.navigateByUrl('home')
+    //     console.log("Registered")
+    //     localStorage.setItem('user', 'value')
+    //     this.router.navigateByUrl('home')
+
+    // })
+    // .catch((error:any) => {
+    //   console.log(error)
+    // })
 }
 
     // register(form:NgForm) {

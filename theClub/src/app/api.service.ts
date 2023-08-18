@@ -8,13 +8,18 @@ import { User } from './interfaces/user';
     providedIn: 'root'
 })
 export class ApiService {
-
+    booksUrl = environment.booksUrl;
     constructor( private http: HttpClient) { }
 
     getBooks() {
         const booksUrl = environment.booksUrl;
         return this.http.get<Book[]>(`${booksUrl}/.json`);
   }
+
+    addBook(bookData:any) {
+        const booksUrl = environment.booksUrl;
+        return this.http.post<Book[]>(`${booksUrl}/.json`, bookData)
+    }
 
   }
 

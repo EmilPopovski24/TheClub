@@ -14,7 +14,7 @@ import { user } from '@angular/fire/auth';
 })
 
 export class LoginComponent implements OnInit{
-  emailDomains = EMAIL_DOMAINS;
+  // emailDomains = EMAIL_DOMAINS;
   
 
 constructor(private userService:UserService, private router:Router) {
@@ -23,18 +23,19 @@ constructor(private userService:UserService, private router:Router) {
   ngOnInit() : void { 
   }
 
-      login(form:NgForm) {       
-        this.userService.signWithEmailAndPassword(form.value)
-        .then((res:any) => {
-          localStorage.setItem('user', 'value')
-          this.router.navigateByUrl('home')
-          console.log("Logged In")
-          
-          // this.userService.isLogged = true;
-          // console.log(form.value)
-        }).catch((error:any) => {
-          console.log(error)
+      login(form:NgForm) {
+        const { username, password } = form.value       
+        this.userService.login(username, password).subscribe(()=>{
+          this.router.navigate(['/home'])
         })
+
+        // .then((res:any) => {
+        //   localStorage.setItem('user', 'value')
+        //   this.router.navigateByUrl('home')
+          
+        //   // this.userService.isLogged = true;
+        //   // console.log(form.value)
+        // })
   }
       
 

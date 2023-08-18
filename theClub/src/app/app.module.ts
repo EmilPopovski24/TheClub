@@ -14,6 +14,7 @@ import { AngularFireAuthModule} from "@angular/fire/compat/auth"
 import { environment } from 'src/environments/environment';
 import * as firebase from "firebase/compat";
 import { AuthActivate } from './core/guards/auth.activate';
+import { appInterceptorProvider } from './app.interceptor';
 
 
 
@@ -34,11 +35,11 @@ import { AuthActivate } from './core/guards/auth.activate';
     HttpClientModule, 
     UserModule,
     BookModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
+    // AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireAuthModule,
     
   ],
-  providers: [AuthActivate ],
+  providers: [AuthActivate, appInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

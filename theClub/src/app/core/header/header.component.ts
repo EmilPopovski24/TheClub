@@ -14,11 +14,15 @@ import { UserService } from 'src/app/user/user.service';
 export class HeaderComponent {
 // LoginStatus$ = new BehaviorSubject<boolean>(null);
 // Email$ : Observable<string>;
-constructor(private userService:UserService, private router:Router) {}
+constructor(private userService:UserService, private router:Router) {
+  console.log(`r - ${this.userService.isLogged}`)
+}
 
 get isLoggedIn():boolean {
   return this.userService.isLogged
+ 
 }
+
 
 
 get firstName(): string {
@@ -30,12 +34,20 @@ get lastName(): string {
   return this.userService.user?.lastName || "";
 }
 
-logout() : void {
- 
-  this.userService.logout();
-  this.router.navigate(['/login'])
+
+logout():void {
+  const auth = getAuth();
+  signOut(auth).then(() => {
+    // Sign-out successful.
   
+  this.router.navigateByUrl("login")
+  console.log("loggedout")
+  this.userService.logout(); 
   
+  console.log(`1- ${this.userService.isLogged}`)
+  }).catch((error) => {
+    console.log(error)
+});
 }
 
 

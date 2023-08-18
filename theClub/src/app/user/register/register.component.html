@@ -12,6 +12,8 @@
         <!-- <p class="error" *ngIf="form.get('email')?.touched">Email is required!</p>
         <p class="error" *ngIf="form.get('email')?.errors?.['minLength']">Email is not valid!</p> -->
     </ng-container>
+    <label for="username"><b>Username</b></label>
+        <input type="text"  name="username" id="username" required ngModel>
 
     <label for="firstName"><b>First name</b></label>
     <input type="text" placeholder="Enter your first name" name="firstName" id="firstName" required  ngModel>
