@@ -17,6 +17,7 @@ import { AuthActivate } from './core/guards/auth.activate';
 import { appInterceptorProvider } from './app.interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { SharedModule } from './shared/shared.module';
+import { NotFoundComponent } from './notfound/notfound.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { SharedModule } from './shared/shared.module';
     BooksComponent,
     AboutComponent,
     AuthenticateComponent,
+    NotFoundComponent,
   
   ],
   imports: [

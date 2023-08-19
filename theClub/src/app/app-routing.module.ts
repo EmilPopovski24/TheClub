@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { BooksComponent } from './books/books.component';
 import { AboutComponent } from './about/about.component';
 import { ErrorComponent } from './core/error/error.component';
+import { NotFoundComponent } from './notfound/notfound.component';
 // import { AuthActivate } from './core/guards/auth.activate';
 
 const routes: Routes = [
@@ -16,11 +17,6 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
-  // {
-  //   path: 'catalog',
-  //   component: BooksComponent,
-    
-  // },
   {
     path: 'about',
     component: AboutComponent,
@@ -29,10 +25,10 @@ const routes: Routes = [
     path: "error",
     component: ErrorComponent,
   },
-  // {
-  //   path: '**',
-  //   component: NotFoundComponent,
-  // },
+  {
+    path: 'notfound',
+    component: NotFoundComponent,
+  },
 
 
 
