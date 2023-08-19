@@ -1,18 +1,3 @@
-<!-- <div *ngIf="noUsers">
-  <h2>There are no books.</h2>
-</div>
-<div *ngFor="let user of usersList" >
-<div class="bookCard">
-  </div>
-  <div class="container">
-      <h3><b>{{ user.email }}</b></h3>
-      <h4>Written by: {{ user.firstName }}</h4>
-      <h5>Published: {{ user.lastName }}</h5>
-      
-  </div>
-</div> -->
-
-
 
 <div class="login-page">
     <h1>Login</h1>
@@ -25,23 +10,22 @@
 
   <div class="container">
     <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required  ngModel >
-    <!-- <ng-container *ngIf="inputEmail.touched">
-		<p class = "error" *ngIf="inputEmail.errors?.['required']">Email is required</p>
-		<p class = "error" *ngIf="inputEmail.errors?.['appEmailValidator']">Email is not valid</p>
-    </ng-container> -->
+    <input type="text" placeholder="Enter Username" name="username" required  ngModel #inputUsername="ngModel">
+    <ng-container *ngIf="inputUsername.touched">
+		<p class = "error" *ngIf="inputUsername.errors?.['required']">Username is required</p>
+    </ng-container>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required ngModel>
-	<!-- <ng-container *ngIf="inputPassword.touched">
+    <input type="password" placeholder="Enter Password" name="password" required ngModel #inputPassword="ngModel">
+	<ng-container *ngIf="inputPassword.touched">
 		<p class = "error" *ngIf="inputPassword.errors?.['required']">Password is required</p>
-		<p class = "error" >Password is not valid</p> --> 
-	<!-- </ng-container>    --> 
+		<p class="error" *ngIf="inputPassword.errors?.['minlength']">
+          Password must be at least
+          {{inputPassword.errors?.['minlength']['requiredLength']}} characters!
+        </p>
+	</ng-container>   
 
     <button [disabled]="form.invalid">Login</button>
-  <!-- <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label> -->
   </div>
 
   <div class="container" style="background-color:#f1f1f1">

@@ -26,7 +26,7 @@ const routes: Routes = [
     component: ErrorComponent,
   },
   {
-    path: 'notfound',
+    path: 'na',
     component: NotFoundComponent,
   },
 
