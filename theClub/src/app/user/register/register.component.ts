@@ -16,6 +16,9 @@ export class RegisterComponent {
   }
 
   register(form:NgForm) {  
+    if(form.invalid) {
+      return;
+    }
       const { email, username, firstName, lastName, password, repeatPassword} = form.value;
     this.userService.register(email!, username!, firstName!, lastName!, password!, repeatPassword!).subscribe(()=>{
       this.router.navigate(['/'])

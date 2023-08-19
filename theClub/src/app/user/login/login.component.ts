@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 // import { EMAIL_DOMAINS } from "src/app/shared/constants"
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { user } from '@angular/fire/auth';
+
 
 
 @Component({
@@ -23,7 +23,10 @@ constructor(private userService:UserService, private router:Router) {
  
 
       login(form:NgForm) {
-        const { username, password } = form.value       
+        if(form.invalid) {
+          return;
+        }
+        const { username, password } = form.value     
         this.userService.login(username, password).subscribe(()=>{
           this.router.navigate(['/home'])
         })
