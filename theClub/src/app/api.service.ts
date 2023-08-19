@@ -12,14 +12,24 @@ export class ApiService {
     // apiUrl = environment.apiUrl
     constructor( private http: HttpClient) { }
 
+
+    getBook(id:string) {
+      const { booksUrl } = environment;
+      return this.http.get<Book>(`${booksUrl}/.json/${id}`);
+    }
+
     getBooks() {
         const booksUrl = environment.booksUrl;
         return this.http.get<Book[]>(`${booksUrl}/.json`);
   }
 
-    addBook(bookData:any) {
-        const booksUrl = environment.booksUrl;
-        return this.http.post<Book[]>(`${booksUrl}/.json`, bookData)
+    addBook(name: string, author: string, genre: string, year: number, imageUrl: string, description: string) {
+      const  booksUrl  = environment.booksUrl
+      // console.log(this.http.post<Book[]>(`${booksUrl}/.json`,{name, author, genre, year, imageUrl, description}))
+        return this.http.post<Book[]>(`${booksUrl}/.json`,{name, author, genre, year, imageUrl, description})
+
+        // const booksUrl = environment.booksUrl;
+        // return this.http.post<Book[]>(`${booksUrl}/.json`, bookData)
     }
 
     

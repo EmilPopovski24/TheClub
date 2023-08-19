@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NewBookComponent } from './new-book/new-book.component';
 import { CurrentBookComponent } from './current-book/current-book.component';
 import { BookRoutingModule } from './book-routing-module';
+import { FormsModule }   from '@angular/forms';
+
 
 
 
@@ -13,7 +15,8 @@ import { BookRoutingModule } from './book-routing-module';
   ],
   imports: [
     CommonModule,
-    BookRoutingModule
+    BookRoutingModule, 
+    FormsModule
   ]
 })
 export class BookModule { }

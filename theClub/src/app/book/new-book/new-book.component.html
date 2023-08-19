@@ -2,31 +2,29 @@
 <div class="login-page">
   <h1>Add a New Book</h1>
 
-<form class="login" >
-  <!-- #form="ngForm" (ngSubmit)="addBook(form)" -->
-
+<form class="login" #form="ngForm" (ngSubmit)="newBookSubmitHandler(form)">
 
 <div class="container">
   <label for="bookName"><b>Book Title</b></label>
-  <input type="text"  name="bookName" required  ngModel >
+  <input type="text"  name="name" required  ngModel >
    
   <label for="author"><b>Author</b></label>
-  <input type="text"  name="bookAuthor" required  ngModel >
+  <input type="text"  name="author" required  ngModel >
   
   <label for="genre"><b>Genre</b></label>
-  <input type="text"  name="bookGenre" required  ngModel >
+  <input type="text"  name="genre" required  ngModel >
 
   <label for="year"><b>Year</b></label>
-  <input type="text"  name="bookYear" required  ngModel >
+  <input type="text"  name="year" required  ngModel >
 
   <label for="imageUrl"><b>Image Url</b></label>
-  <input type="text"  name="bookImageUrl" required  ngModel >
+  <input type="text"  name="imageUrl" required  ngModel >
   
   <label for="description"><b>Description</b></label>
-  <textarea name="bookDescription" required  ngModel></textarea>
+  <textarea name="description" required  ngModel></textarea>
   
 
-  <button>Add</button>
+  <button [disabled]="form.invalid">Add</button>
 
 </div>
 </form>

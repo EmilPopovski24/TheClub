@@ -1,1 +1,19 @@
-<p>current-book works!</p>
+<div class="bookCard" *ngIf="book">
+        
+            
+    <div class="img-container">
+
+        <img src="{{ book.imageUrl }}" alt="Avatar" >
+    </div>
+    <div class="container">
+        <h3><b>{{ book.name }}</b></h3>
+        <h4>Written by: {{ book.author }}</h4>
+        <h5>Published: {{ book.year }}</h5>
+        <div class="description">
+            <p><b>Description:</b> {{book.description}}</p>
+        </div>
+        <button class = "editButton">Edit</button>
+        <button class = "deleteButton">Delete</button>
+    </div>
+    
+</div>

@@ -3,10 +3,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { NewBookComponent } from './new-book/new-book.component';
 import { BooksComponent } from '../books/books.component';
 import { AuthActivate } from '../core/guards/auth.activate';
+import { FormsModule }   from '@angular/forms';
+import { CurrentBookComponent } from './current-book/current-book.component';
+
+
 const routes: Routes = [
   {
     path: 'books',
-    component: BooksComponent
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        component: BooksComponent
+      },
+      {
+        path: ':bookId',
+        component: CurrentBookComponent,
+        canActivate: [AuthActivate],
+      }
+    ]
   }, 
   {
     path: 'add-book',
@@ -17,7 +32,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class BookRoutingModule { }

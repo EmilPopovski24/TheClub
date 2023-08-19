@@ -10,12 +10,19 @@ import { ApiService } from 'src/app/api.service';
 })
 export class NewBookComponent {
   constructor(private apiService:ApiService, private router:Router) {}
+  
 
-  addBook(form:NgForm) {
-    const { bookData } = form.value;
-    this.apiService.addBook(bookData)
-    .subscribe(()=> {
-      this.router.navigateByUrl('/catalog')
-    })
+  newBookSubmitHandler(form: NgForm):void {
+    if(form.invalid) {
+      return;
+    }
+    const { name, author, genre, year, imageUrl, description } = form.value;
+    console.log(author)
+    this.apiService.addBook(name, author, genre, year, imageUrl, description).subscribe(() => {
+      
+      this.router.navigate(['/catalog'])
+      
+    });
   }
+  
 }

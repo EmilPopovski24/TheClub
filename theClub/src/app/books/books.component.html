@@ -6,13 +6,19 @@
     <title>Document</title>
 </head>
 <body>
+
     <div *ngIf="noBooks">
         <h2>There are no books.</h2>
     </div>
+    
+      
     <div *ngFor="let book of booksList" >
     <div class="bookCard">
+        
+            
         <div class="img-container">
-            <img src="{{ book.imageUrl }}" alt="Avatar" >
+            <a [routerLink]="book._id">
+            <img src="{{ book.imageUrl }}" alt="Avatar" ></a>
         </div>
         <div class="container">
             <h3><b>{{ book.name }}</b></h3>
@@ -21,6 +27,9 @@
             <div class="description">
                 <p><b>Description:</b> {{book.description}}</p>
             </div>
+        </div>
+        <div class="details">
+            <button><a routerLink="/book._id">Details</a></button>
         </div>
     </div>
 </div>

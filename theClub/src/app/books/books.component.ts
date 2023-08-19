@@ -13,11 +13,16 @@ export class BooksComponent implements OnInit{
 	constructor(private apiService:ApiService) {}
 
 	ngOnInit(): void {
-		this.apiService.getBooks().subscribe({next:(books) => {this.booksList = books;
-			if(this.booksList.length === 0) {
-				this.noBooks = true;
-			}	
-		}
-	});
+		console.log(this.booksList.length)
+		this.apiService.getBooks().subscribe((booksList) => {
+		this.booksList = Object.values(booksList)})
+		// if(this.booksList?.length === 0) {
+		// 		this.noBooks = true;
+		// }	
+				
 	}
-}
+};
+		
+		
+	
+
