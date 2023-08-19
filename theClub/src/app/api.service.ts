@@ -15,7 +15,7 @@ export class ApiService {
 
     getBook(id:string) {
       const { booksUrl } = environment;
-      return this.http.get<Book>(`${booksUrl}/.json/${id}`);
+      return this.http.get<Book>(`${booksUrl}/${id}`);
     }
 
     getBooks() {

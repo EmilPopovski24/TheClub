@@ -16,8 +16,8 @@ export class NewBookComponent {
     if(form.invalid) {
       return;
     }
-    const { name, author, genre, year, imageUrl, description } = form.value;
-    console.log(author)
+    const { name, author, genre, year, imageUrl, description} = form.value;
+    
     this.apiService.addBook(name, author, genre, year, imageUrl, description).subscribe(() => {
       
       this.router.navigate(['/catalog'])

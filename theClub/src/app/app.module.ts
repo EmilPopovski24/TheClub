@@ -16,9 +16,7 @@ import * as firebase from "firebase/compat";
 import { AuthActivate } from './core/guards/auth.activate';
 import { appInterceptorProvider } from './app.interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
-
-
-
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -36,6 +34,7 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
     CoreModule,
     HttpClientModule, 
     UserModule,
+    SharedModule,
     BookModule,
     // AngularFireModule.initializeApp(environment.firebase),
     // AngularFireAuthModule,

@@ -9,7 +9,7 @@ import { CurrentBookComponent } from './current-book/current-book.component';
 
 const routes: Routes = [
   {
-    path: 'books',
+    path: 'catalog',
     children: [
       {
         path: '',

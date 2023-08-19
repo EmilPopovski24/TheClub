@@ -14,10 +14,8 @@
       
     <div *ngFor="let book of booksList" >
     <div class="bookCard">
-        
-            
         <div class="img-container">
-            <a [routerLink]="book._id">
+            <a routerLink="book._id">
             <img src="{{ book.imageUrl }}" alt="Avatar" ></a>
         </div>
         <div class="container">
@@ -29,7 +27,7 @@
             </div>
         </div>
         <div class="details">
-            <button><a routerLink="/book._id">Details</a></button>
+            <button routerLink="book._id">Details</button>
         </div>
     </div>
 </div>
