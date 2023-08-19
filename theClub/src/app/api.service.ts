@@ -23,17 +23,10 @@ export class ApiService {
         return this.http.get<Book[]>(`${booksUrl}/.json`);
   }
 
-    addBook(name: string, author: string, genre: string, year: number, imageUrl: string, description: string) {
+    addBook(name: string, author: string, genre: string, year: number, imageUrl: string, description: string, _id:string) {
       const  booksUrl  = environment.booksUrl
-      // console.log(this.http.post<Book[]>(`${booksUrl}/.json`,{name, author, genre, year, imageUrl, description}))
-        return this.http.post<Book[]>(`${booksUrl}/.json`,{name, author, genre, year, imageUrl, description})
-
-        // const booksUrl = environment.booksUrl;
-        // return this.http.post<Book[]>(`${booksUrl}/.json`, bookData)
+        return this.http.post<Book[]>(`${booksUrl}/.json`,{name, author, genre, year, imageUrl, description, _id})
     }
-
-    
-
   }
 
 //   {

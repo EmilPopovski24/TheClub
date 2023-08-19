@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
 
 
 @Component({
@@ -9,5 +10,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'theClub';
 
-  
 }

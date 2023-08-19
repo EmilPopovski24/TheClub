@@ -24,20 +24,5 @@ export class RegisterComponent {
       this.router.navigate(['/'])
     })
 
-    // .then((res:any) => {
-    //     this.router.navigateByUrl('home')
-    //     console.log("Registered")
-    //     localStorage.setItem('user', 'value')
-    //     this.router.navigateByUrl('home')
-
-    // })
-    // .catch((error:any) => {
-    //   console.log(error)
-    // })
-}
-
-    // register(form:NgForm) {
-    //   const { email, firstName, lastName, password, repeatPassword} = form.value;
-    //   // console.log(email)
-    // }
+  }
 }

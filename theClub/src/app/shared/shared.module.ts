@@ -11,4 +11,4 @@ import { CommonModule } from "@angular/common"
 
 export class SharedModule {}
 
-//export const EMAIL_DOMAINS = ["bg", "com", "net", "org"];
+export const EMAIL_DOMAINS = ["bg", "com", "net", "org"];

@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 // import { EMAIL_DOMAINS } from "src/app/shared/constants"
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { EMAIL_DOMAINS } from 'src/app/shared/shared.module';
 
 
 
@@ -14,11 +15,10 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent{
-  // emailDomains = EMAIL_DOMAINS;
+        emailDomains = EMAIL_DOMAINS;
   
 
-constructor(private userService:UserService, private router:Router) {
-}
+constructor(private userService:UserService, private router:Router) {}
 
  
 
@@ -30,17 +30,6 @@ constructor(private userService:UserService, private router:Router) {
         this.userService.login(username, password).subscribe(()=>{
           this.router.navigate(['/home'])
         })
-
-        // .then((res:any) => {
-        //   localStorage.setItem('user', 'value')
-        //   this.router.navigateByUrl('home')
-          
-        //   // this.userService.isLogged = true;
-        //   // console.log(form.value)
-        // })
-  }
-      
-
-   
+  }  
 }
 

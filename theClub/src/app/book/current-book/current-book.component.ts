@@ -19,7 +19,6 @@ export class CurrentBookComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(`init`)
     this.fetchBook()
   }
 
