@@ -24,6 +24,7 @@ export class CurrentBookComponent implements OnInit {
 
   fetchBook() :void {
     const id = this.activatedRoute.snapshot.params['bookId'];
+    console.log(id)
     this.apiService.getBook(id).subscribe((book) => {
       this.book = book;
     })

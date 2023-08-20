@@ -9,7 +9,7 @@
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" id="email" required ngModel #inputEmail="ngModel">
         <ng-container *ngIf="inputEmail.touched">
-        <p class = "error" *ngIf="inputEmail.errors?.['required']">Username is required</p>
+        <p class = "error" *ngIf="inputEmail.errors?.['required']">Email is required</p>
         </ng-container>
 
         <label for="username"><b>Username</b></label>
@@ -21,25 +21,25 @@
     <label for="firstName"><b>First name</b></label>
     <input type="text" placeholder="Enter your first name" name="firstName" id="firstName" required  ngModel #inputFirstName="ngModel">
     <ng-container *ngIf="inputFirstName.touched">
-      <p class = "error" *ngIf="inputFirstName.errors?.['required']">Username is required</p>
+      <p class = "error" *ngIf="inputFirstName.errors?.['required']">First name is required</p>
     </ng-container>
 
     <label for="lastName"><b>Last name</b></label>
     <input type="text" placeholder="Enter your last name" name="lastName" id="lastName" required  ngModel #inputLastName="ngModel">
     <ng-container *ngIf="inputLastName.touched">
-      <p class = "error" *ngIf="inputLastName.errors?.['required']">Username is required</p>
+      <p class = "error" *ngIf="inputLastName.errors?.['required']">Last name is required</p>
     </ng-container>
     
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="password" id="password" required  ngModel #inputPassword="ngModel">
         <ng-container *ngIf="inputPassword.touched">
-          <p class = "error" *ngIf="inputPassword.errors?.['required']">Username is required</p>
+          <p class = "error" *ngIf="inputPassword.errors?.['required']">Password is required</p>
         </ng-container>
 
         <label for="psw-repeat"><b>Repeat Password</b></label>
         <input type="password" placeholder="Repeat Password" name="repeatPassword" id="repeatPassword" required  ngModel #inputRepeatPassword="ngModel">
         <ng-container *ngIf="inputRepeatPassword.touched">
-          <p class = "error" *ngIf="inputRepeatPassword.errors?.['required']">Username is required</p>
+          <p class = "error" *ngIf="inputRepeatPassword.errors?.['required']">Repeat Password is required</p>
         </ng-container>
 
         <hr>

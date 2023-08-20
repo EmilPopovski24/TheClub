@@ -5,6 +5,7 @@ import { BooksComponent } from './books/books.component';
 import { AboutComponent } from './about/about.component';
 import { ErrorComponent } from './core/error/error.component';
 import { NotFoundComponent } from './notfound/notfound.component';
+import { MyBooksComponent } from './user/my-books/my-books.component';
 // import { AuthActivate } from './core/guards/auth.activate';
 
 const routes: Routes = [
@@ -26,9 +27,12 @@ const routes: Routes = [
     component: ErrorComponent,
   },
   {
-    path: 'na',
+    path: 'any',
+    pathMatch: 'full',
     component: NotFoundComponent,
   },
+  
+  
 
 
 
