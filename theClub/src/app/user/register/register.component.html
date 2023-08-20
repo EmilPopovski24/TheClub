@@ -7,35 +7,40 @@
         </div>
       <hr>  
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email" required ngModel>
-    <ng-container>
-        <p class="error" *ngIf="form.get('email')?.touched">Email is required!</p>
-        <p class="error" *ngIf="form.get('email')?.errors?.['minLength']">Email is not valid!</p>
-    </ng-container>
-    <label for="username"><b>Username</b></label>
-        <input type="text"  name="username" id="username" required ngModel>
-        <p class="error" *ngIf="form.get('username')?.touched">Username  is required!</p>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required ngModel #inputEmail="ngModel">
+        <ng-container *ngIf="inputEmail.touched">
+        <p class = "error" *ngIf="inputEmail.errors?.['required']">Username is required</p>
+        </ng-container>
+
+        <label for="username"><b>Username</b></label>
+          <input type="text"  name="username" id="username" required ngModel #inputUsername="ngModel">
+          <ng-container *ngIf="inputUsername.touched">
+            <p class = "error" *ngIf="inputUsername.errors?.['required']">Username is required</p>
+          </ng-container>
 
     <label for="firstName"><b>First name</b></label>
-    <input type="text" placeholder="Enter your first name" name="firstName" id="firstName" required  ngModel>
-    <ng-container>
-      <p class="error" *ngIf="form.get('firstName')?.touched">First name is required!</p>
+    <input type="text" placeholder="Enter your first name" name="firstName" id="firstName" required  ngModel #inputFirstName="ngModel">
+    <ng-container *ngIf="inputFirstName.touched">
+      <p class = "error" *ngIf="inputFirstName.errors?.['required']">Username is required</p>
     </ng-container>
 
     <label for="lastName"><b>Last name</b></label>
-    <input type="text" placeholder="Enter your last name" name="lastName" id="lastName" required  ngModel>
-    <ng-container>
-      <p class="error" *ngIf="form.get('lastName')?.touched">Last name is required!</p>
-
-  </ng-container>
+    <input type="text" placeholder="Enter your last name" name="lastName" id="lastName" required  ngModel #inputLastName="ngModel">
+    <ng-container *ngIf="inputLastName.touched">
+      <p class = "error" *ngIf="inputLastName.errors?.['required']">Username is required</p>
+    </ng-container>
     
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" id="password" required  ngModel>
-        <p class="error" *ngIf="form.get('password')?.touched">Password is required!</p>
+        <input type="password" placeholder="Enter Password" name="password" id="password" required  ngModel #inputPassword="ngModel">
+        <ng-container *ngIf="inputPassword.touched">
+          <p class = "error" *ngIf="inputPassword.errors?.['required']">Username is required</p>
+        </ng-container>
 
         <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="repeatPassword" id="repeatPassword" required  ngModel>
-        <p class="error" *ngIf="form.get('repeatPassword')?.touched">Repeat Password is required!</p>
+        <input type="password" placeholder="Repeat Password" name="repeatPassword" id="repeatPassword" required  ngModel #inputRepeatPassword="ngModel">
+        <ng-container *ngIf="inputRepeatPassword.touched">
+          <p class = "error" *ngIf="inputRepeatPassword.errors?.['required']">Username is required</p>
+        </ng-container>
 
         <hr>
     
