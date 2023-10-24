@@ -20,6 +20,7 @@ get isLoggedIn():boolean {
 }
 
 get firstName(): string {
+  
   return this.userService.user?.firstName || "";
 }
 

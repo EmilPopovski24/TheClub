@@ -42,9 +42,9 @@ form = this.fb.group({
             email
         })
     }
+
 toggleEditMode():void {
     this.isEditMode = !this.isEditMode
-
 }
 
 saveProfileHandler(form: NgForm) :void {
@@ -57,17 +57,7 @@ saveProfileHandler(form: NgForm) :void {
     this.toggleEditMode();
 });
 
-
-
 }
 
-
-// logout() {
-//     console.log(this.userService.user);
-// }
-
-// get firstName():string {
-//     return this.userService.user?.firstName
-// }    
 
 }

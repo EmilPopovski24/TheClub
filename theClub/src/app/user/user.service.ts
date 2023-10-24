@@ -23,27 +23,22 @@ export class UserService implements OnDestroy {
 	}
 	subscription: Subscription
 	USER_KEY = '[user]';
+
 	constructor(private router:Router, private http:HttpClient) {
+		
 		this.subscription = this.user$.subscribe(user => {
 			this.user = user
 		})
 	}
-	// constructor(private afs: AngularFireAuth, private router:Router, private http:HttpClient) {
-		
-	// }
 	
 	register(email:string, username:string, firstName: string, lastName: string, password:string, repeatPassword:string) {
 		return this.http.post<User>('/api/register', {email, username, firstName, lastName, password, repeatPassword})
 		.pipe(tap((user) => this.user$$.next(user)))
-		// return  this..createUserWithEmailAndPassword( user.email, user.password)
-		
 	}
 
-	login(username:string, password:string) {
-		
+	login(username:string, password:string) {	
 		return this.http.post<User>('/api/login', {username, password})
-		.pipe(tap((user) => this.user$$.next(user)));
-		 
+		.pipe(tap((user) => this.user$$.next(user))); 
 	}
 
 	
@@ -53,10 +48,8 @@ export class UserService implements OnDestroy {
 	}
 
 	updateProfile(username:string, email:string) {
-		{
 			return this.http.put<User>('/api/users/profile', {username, email})
 			.pipe(tap((user) => this.user$$.next(user)));
-		}
 	}
 
 	logout() {
