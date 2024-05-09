@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { ErrorComponent } from './core/error/error.component';
 import { NotFoundComponent } from './notfound/notfound.component';
 import { MyBooksComponent } from './user/my-books/my-books.component';
+import { BookModule } from './book/book.module';
 // import { AuthActivate } from './core/guards/auth.activate';
 
 const routes: Routes = [
@@ -31,6 +32,12 @@ const routes: Routes = [
     pathMatch: 'full',
     component: NotFoundComponent,
   },
+  {
+    path: 'any',
+    pathMatch: 'full',
+    component: BookModule,
+  }
+
   
   
 
