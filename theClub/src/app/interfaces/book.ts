@@ -6,5 +6,5 @@ export interface Book {
     imageUrl: string;
     description: string;
     _id: string,
-    owner: string
+    owner: string,
 }
