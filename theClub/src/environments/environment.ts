@@ -11,13 +11,9 @@ export const environment = {
   //   authDomain: 'theclub-db.firebaseapp.com',
   //   messagingSenderId: '22141649058',
   , booksUrl:'https://theclub-db-default-rtdb.firebaseio.com/books'
-    
-    
 };
-
 
 //apiUrl: 'https://users-49514-default-rtdb.firebaseio.com/',
 // booksUrl:'https://books-9e87c-default-rtdb.firebaseio.com'
-
 //https://books-9e87c-default-rtdb.firebaseio.com/users
 
