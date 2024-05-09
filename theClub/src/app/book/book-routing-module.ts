@@ -16,14 +16,14 @@ const routes: Routes = [
         component: BooksComponent
       },
       {
-        path: '/:bookId',
+        path: ':bookId',
         component: CurrentBookComponent,
         canActivate: [AuthActivate],
       }
     ]
   }, 
   {
-    path: '/add-book',
+    path: 'add-book',
     component: NewBookComponent,
     canActivate: [AuthActivate],
   }
