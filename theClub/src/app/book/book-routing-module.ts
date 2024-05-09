@@ -19,7 +19,7 @@ const routes: Routes = [
       {
         path: ':bookId',
         component: CurrentBookComponent,
-        canActivate: [AuthActivate],
+        // canActivate: [AuthActivate],
       }
     ]
   }, 

@@ -4,16 +4,12 @@ import { NewBookComponent } from './new-book/new-book.component';
 import { CurrentBookComponent } from './current-book/current-book.component';
 import { BookRoutingModule } from './book-routing-module';
 import { FormsModule }   from '@angular/forms';
-import { BooksComponent } from '../books/books.component';
-
-
 
 
 @NgModule({
   declarations: [
     NewBookComponent,
-    CurrentBookComponent,
-    
+    CurrentBookComponent
   ],
   imports: [
     CommonModule,
