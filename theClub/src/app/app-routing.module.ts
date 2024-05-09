@@ -32,17 +32,7 @@ const routes: Routes = [
     pathMatch: 'full',
     component: NotFoundComponent,
   },
-  {
-    path: 'any',
-    pathMatch: 'full',
-    component: BookModule,
-  }
-
   
-  
-
-
-
 ];
 
 @NgModule({
