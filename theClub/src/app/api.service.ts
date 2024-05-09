@@ -9,7 +9,7 @@ import { User } from './interfaces/user';
 })
 export class ApiService {
     // booksUrl = environment.booksUrl;
-    // apiUrl = environment.apiUrl
+    // apiUrl = environment.apiUrl;
     constructor( private http: HttpClient) { }
   book : Book ;
 
