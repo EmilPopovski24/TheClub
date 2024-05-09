@@ -28,7 +28,6 @@ const routes: Routes = [
     component: NewBookComponent,
     canActivate: [AuthActivate],
   }
-
 ];
 
 @NgModule({
