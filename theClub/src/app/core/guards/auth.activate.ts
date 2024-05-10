@@ -17,5 +17,4 @@ export class AuthActivate implements CanActivate{
         
         return this.userService.isLogged;
     }
-
 }
