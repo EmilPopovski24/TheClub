@@ -27,8 +27,7 @@ import { NotFoundComponent } from './notfound/notfound.component';
     BooksComponent,
     AboutComponent,
     AuthenticateComponent,
-    NotFoundComponent,
-  
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
