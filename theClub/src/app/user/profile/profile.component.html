@@ -15,7 +15,6 @@
                 <p>Addicted Reader</p>
         <button class="editButton" (click)="toggleEditMode()">Edit</button>
         <button routerLink="/profile/my-books">My Books</button>
-        
     </form>
         </ng-container>
         <ng-container *ngIf="isEditMode">
@@ -27,11 +26,8 @@
                 <p class="email">Email: <input type="text" id="email" name="email" formControlName="email"></p> 
             </div>
         <p>Addicted Reader</p>
-        <button class="saveButton">Save</button>
-        
+        <button class="saveButton">Save</button>       
         </form>
         </ng-container>
-    </div>
-
-    
+    </div> 
 </body>
