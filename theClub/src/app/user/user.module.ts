@@ -7,9 +7,6 @@ import { UserRoutingModule } from './user-routing-module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { MyBooksComponent } from './my-books/my-books.component';
-// import { SharedModule } from '../shared/shared.module';
-
-
 
 @NgModule({
   declarations: [
