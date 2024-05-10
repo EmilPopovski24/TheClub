@@ -13,7 +13,4 @@ export const environment = {
   , booksUrl:'https://theclub-db-default-rtdb.firebaseio.com/books'
 };
 
-//apiUrl: 'https://users-49514-default-rtdb.firebaseio.com/',
-// booksUrl:'https://books-9e87c-default-rtdb.firebaseio.com'
-//https://books-9e87c-default-rtdb.firebaseio.com/users
 
