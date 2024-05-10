@@ -5,7 +5,6 @@ import { environment } from "src/environments/environment";
 import { ErrorService } from "./core/error/error.service";
 import { Router } from "@angular/router";
 
-
 const { apiUrl } = environment;
 
 @Injectable()
