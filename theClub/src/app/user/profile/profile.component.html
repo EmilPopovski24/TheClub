@@ -3,7 +3,6 @@
         <ng-container>
             <img src="/assets/generic-profile-pic.jpg" alt="John" style="width:100%">
         </ng-container>
-        <!-- readonly -->
         <ng-container *ngIf="!isEditMode">
             <form class="profile-readonly" >              
                 <div>
@@ -19,7 +18,6 @@
         
     </form>
         </ng-container>
-        <!-- edit -->
         <ng-container *ngIf="isEditMode">
         <form class="profile" [formGroup]="form" (ngSubmit)="saveProfileHandler()">
             <div>
