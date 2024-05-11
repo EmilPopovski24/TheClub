@@ -27,8 +27,6 @@ body {
   .description {
     height:100%
   }
-
-
   
   /* On mouse-over, add a deeper shadow */
   .bookCard:hover {
