@@ -14,7 +14,6 @@ import { appInterceptorProvider } from './app.interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './notfound/notfound.component';
-import { NewComponentComponent } from './new-component/new-component.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { NewComponentComponent } from './new-component/new-component.component';
     BooksComponent,
     AboutComponent,
     AuthenticateComponent,
-    NotFoundComponent,
-    NewComponentComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
