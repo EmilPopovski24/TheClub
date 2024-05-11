@@ -15,7 +15,6 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './notfound/notfound.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
