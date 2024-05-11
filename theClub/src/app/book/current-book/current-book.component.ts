@@ -30,8 +30,8 @@ export class CurrentBookComponent implements OnInit {
     })
   }
 
-  navigateTo(path:string): void {
-    this.router.navigate([path])
-  }
+  // navigateTo(path:string): void {
+  //   this.router.navigate([path])
+  // }
 
 }
