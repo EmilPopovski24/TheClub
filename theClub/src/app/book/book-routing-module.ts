@@ -5,7 +5,6 @@ import { BooksComponent } from '../books/books.component';
 import { AuthActivate } from '../core/guards/auth.activate';
 import { CurrentBookComponent } from './current-book/current-book.component';
 
-
 const routes: Routes = [
   {
     path: 'catalog',
