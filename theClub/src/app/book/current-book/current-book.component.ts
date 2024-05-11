@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from 'express';
 import { ApiService } from 'src/app/api.service';
 import { Book } from 'src/app/interfaces/book';
 import { UserService } from 'src/app/user/user.service';
@@ -12,7 +13,7 @@ import { UserService } from 'src/app/user/user.service';
 
 export class CurrentBookComponent implements OnInit {
   book: Book | undefined;
-  constructor(private apiService:ApiService, private activatedRoute:ActivatedRoute, private userService:UserService) {}
+  constructor(private apiService:ApiService, private activatedRoute:ActivatedRoute, private userService:UserService, private router:Router) {}
 
   get isLogged(): boolean {
     return this.userService.isLogged;
@@ -24,10 +25,13 @@ export class CurrentBookComponent implements OnInit {
 
   fetchBook() :void {
     const id = this.activatedRoute.snapshot.params['bookId'];
-    // console.log(id)
     this.apiService.getBook(id).subscribe((book) => {
       this.book = book;
     })
+  }
+
+  navigateTo(path:string): void {
+    this.router.navigate([path])
   }
 
 }
