@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { getAuth, signOut, user } from '@angular/fire/auth';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/interfaces/user';
-
 import { UserService } from 'src/app/user/user.service';
 
 
